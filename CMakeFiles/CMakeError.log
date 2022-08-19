@@ -1,0 +1,77 @@
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: C:/Users/aischool/Desktop/중간프로젝트/model/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_0bd65.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && .NET Framework용 Microsoft (R) Build Engine 버전 17.2.1+52cd2da31
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ 최적화 컴파일러 버전 19.32.31332(x64)
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=sgemm_ /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0bd65.dir\Debug\\" /Fd"cmTC_0bd65.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.24\Modules\CheckFunctionExists.c"
+CheckFunctionExists.obj : error LNK2019: sgemm_main 함수에서 참조되는 확인할 수 없는 외부 기호 [C:\Users\aischool\Desktop\중간프로젝트\model\CMakeFiles\CMakeTmp\cmTC_0bd65.vcxproj]
+C:\Users\aischool\Desktop\중간프로젝트\model\CMakeFiles\CMakeTmp\Debug\cmTC_0bd65.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다. [C:\Users\aischool\Desktop\중간프로젝트\model\CMakeFiles\CMakeTmp\cmTC_0bd65.vcxproj]
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: C:/Users/aischool/Desktop/중간프로젝트/model/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_452bf.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && .NET Framework용 Microsoft (R) Build Engine 버전 17.2.1+52cd2da31
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ 최적화 컴파일러 버전 19.32.31332(x64)
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  src.c
+C:\Users\aischool\Desktop\중간프로젝트\model\CMakeFiles\CMakeTmp\src.c(1,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'pthread.h': No such file or directory [C:\Users\aischool\Desktop\중간프로젝트\model\CMakeFiles\CMakeTmp\cmTC_452bf.vcxproj]
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_452bf.dir\Debug\\" /Fd"cmTC_452bf.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\aischool\Desktop\중간프로젝트\model\CMakeFiles\CMakeTmp\src.c"
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: C:/Users/aischool/Desktop/중간프로젝트/model/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_fcae3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && .NET Framework용 Microsoft (R) Build Engine 버전 17.2.1+52cd2da31
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ 최적화 컴파일러 버전 19.32.31332(x64)
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fcae3.dir\Debug\\" /Fd"cmTC_fcae3.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.24\Modules\CheckFunctionExists.c"
+LINK : fatal error LNK1104: 'pthreads.lib' 파일을 열 수 없습니다. [C:\Users\aischool\Desktop\중간프로젝트\model\CMakeFiles\CMakeTmp\cmTC_fcae3.vcxproj]
+
+
+
+Determining if the function pthread_create exists in the pthread failed with the following output:
+Change Dir: C:/Users/aischool/Desktop/중간프로젝트/model/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_a3337.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && .NET Framework용 Microsoft (R) Build Engine 버전 17.2.1+52cd2da31
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ 최적화 컴파일러 버전 19.32.31332(x64)
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a3337.dir\Debug\\" /Fd"cmTC_a3337.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.24\Modules\CheckFunctionExists.c"
+LINK : fatal error LNK1104: 'pthread.lib' 파일을 열 수 없습니다. [C:\Users\aischool\Desktop\중간프로젝트\model\CMakeFiles\CMakeTmp\cmTC_a3337.vcxproj]
+
+
+
