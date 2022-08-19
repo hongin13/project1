@@ -31,12 +31,10 @@ count = 0
 l_count = [0] * 12
 result = []
 d = []
+
 def distance(x1, y1, x2, y2):
     result = math.sqrt(math.pow(x1-x2, 2) + math.pow(y1-y2, 2))
     return result
-
-# def rotate(x1, y1):
-
 
 def eyebrow(p1, p2, p3, p4):
     d1 = distance(p1[0], p1[1], p2[0], p2[1])
@@ -49,16 +47,18 @@ def nose(p1, p2, p3, p4):
     return d1 / d2
 
 # eb_list = [21, 22, 17, 26]
-base = [0, 16, 19, 8]
+face = [0, 16, 19, 8]
 eyebrow_list = [21, 22, 0, 16]
-eye_list = [39, 42, 0, 16]
+eyeb_list = [39, 42, 0, 16]
 low_list = [57, 8, (19, 24), 8]
 philtrum_list = [33, 51, (19,24), 8]
 uplib_list = [51, 62, (19,24), 8]
-ns_list = [31, 35, 27, 33]
-le_list = [37, 41, 36, 39]
-re_list = [44, 46, 42, 45]
-
+downlib_list = [66, 57, (19,24), 8]
+nosew_list = [31, 35, 0, 16]
+noseh_list = [27, 33, (19,24), 8]
+lefteye_list =[36, 39, 0, 16]
+righteye_list = [42, 45, 0, 16]
+mouth_list = [48, 54, 0, 16]
 
 
 for i, l in meta:
@@ -85,36 +85,36 @@ for i, l in meta:
         
         
         
-        for i in range(68):         # .dat 파일이 68개의 점을 가지고 있음
-            part = shape.part(i)
-            p = (part.x, part.y)
-            cv2.circle(dst, p, 3, (255, 0, 0), -1)
+        # for i in range(68):         # .dat 파일이 68개의 점을 가지고 있음
+        #     part = shape.part(i)
+        #     p = (part.x, part.y)
+        #     cv2.circle(dst, p, 3, (255, 0, 0), -1)
         
-        b = []
-        for i in base:
-            part = shape.part(i)
-            p = (part.x, part.y)
-            b.append(p)
-        cv2.rectangle(dst, (b[0][0], b[2][1]), (b[1][0], b[3][1]), (255, 0, 0), 3)
+        # b = []
+        # for i in face:
+        #     part = shape.part(i)
+        #     p = (part.x, part.y)
+        #     b.append(p)
+        # cv2.rectangle(dst, (b[0][0], b[2][1]), (b[1][0], b[3][1]), (255, 0, 0), 3)
 
-        eb = []
-        for i in eb_list:
+        res = []
+        for i in eyebrow_list:
             part = shape.part(i)
             p = (part.x, part.y)
             cv2.circle(dst, p, 3, (0, 0, 255), -1)
-            eb.append(p)
+            res.append(p)
             # print(p)
         
-        ns = []
-        for i in ns_list:
-            part = shape.part(i)
-            p = (part.x, part.y)
-            cv2.circle(dst, p, 3, (0, 255, 0), -1)
-            ns.append(p)
+        # ns = []
+        # for i in ns_list:
+        #     part = shape.part(i)
+        #     p = (part.x, part.y)
+        #     cv2.circle(dst, p, 3, (0, 255, 0), -1)
+        #     ns.append(p)
 
-        eb_val = eyebrow(eb[0], eb[1], b[0] , b[1])
-        ns_val = nose(ns[0], ns[1], ns[2], ns[3])
-        result.append((eb_val, ns_val, l, count))
+        eyebrow_val = eyebrow(res[0], res[1], res[2], res[3])
+        # ns_val = nose(ns[0], ns[1], ns[2], ns[3])
+        result.append((eyebrow_val, l, count))
     #     print(x1, x2, y1, y2)
     # cv2.rectangle(dst, (x1, y1), (x2, y2), (0, 0, 255), 3)
     # cv2.imshow('dst', dst)
