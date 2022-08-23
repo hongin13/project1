@@ -42,3 +42,28 @@ print(dt1.predict(tt_x[:5]))
 print(list(tt_y[:5]))
 
 # %%
+from sklearn.linear_model import LogisticRegression
+lr1 = LogisticRegression()
+lr1.fit(x_data, y_data)
+print(lr1.score(x_data, y_data), lr1.score(tt_x, tt_y))
+print(lr1.predict(tt_x[:5]))
+print(list(tt_y[:5]))
+
+# %%
+from sklearn.ensemble import AdaBoostClassifier
+ab1 = AdaBoostClassifier()
+ab1.fit(x_data, y_data)
+print(ab1.score(x_data, y_data), ab1.score(tt_x, tt_y))
+print(ab1.predict(tt_x[:5]))
+print(list(tt_y[:5]))
+
+# %%
+from sklearn.ensemble import RandomForestClassifier
+rf1 = RandomForestClassifier()
+rf1.fit(x_data, y_data)
+print(rf1.score(x_data, y_data), rf1.score(tt_x, tt_y))
+print(rf1.predict(tt_x[:5]))
+print(list(tt_y[:5]))
+
+
+# %%
