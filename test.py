@@ -6,9 +6,10 @@ import numpy as np
 import json
 
 meta = []
-labels = ['Rat', 'Cow', 'Tiger', 'Rabbit', 'Dragon', 'Snake',
-          'Horse', 'Sheep', 'Monkey', 'Chicken', 'Dog', 'Pig']
+# labels = ['Rat', 'Cow', 'Tiger', 'Rabbit', 'Dragon', 'Snake',
+#           'Horse', 'Sheep', 'Monkey', 'Chicken', 'Dog', 'Pig']
 
+count = 0
 DESIRED_HEIGHT = 480
 DESIRED_WIDTH = 480
 def resize(image):
@@ -44,22 +45,16 @@ for root, dirs, filenames in os.walk('C:/Users/aischool/Desktop/test'):
             print("Error : ", path)
             continue
         resize(image)
-        label = -1
-        for index, name in enumerate(labels):
-            if name in root:
-                label = index
-                break
-        if label == -1:
-            continue
+
         first, last = os.path.splitext(filename)
         path = os.path.join(root, first + '.jpg')
-        meta.append((path, label))
+        meta.append((path))
 print(len(meta))
 
 images = {}
 for i in range(len(meta)):
     # print(meta[i][0])
-    images[i] = cv2.imread(meta[i][0]), meta[i][1]
+    images[i] = cv2.imread(meta[i])
 
 mp_face_mesh = mp.solutions.face_mesh
 
@@ -69,13 +64,11 @@ mp_drawing_styles = mp.solutions.drawing_styles
 with mp_face_mesh.FaceMesh(static_image_mode=True, refine_landmarks=True, max_num_faces=2, min_detection_confidence=0.5) as face_mesh:
     for count, data in images.items():
         image = data[0]
-        label = data[1]
         points = {}
         # Convert the BGR image to RGB and process it with MediaPipe Face Mesh.
         results = face_mesh.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 
         # Draw face landmarks of each face.
-        print(f'Face landmarks of {labels[label]}:')
         
         # face_mesh
         if not results.multi_face_landmarks:
@@ -93,12 +86,15 @@ with mp_face_mesh.FaceMesh(static_image_mode=True, refine_landmarks=True, max_nu
             #  landmark_drawing_spec=None, connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_iris_connections_style())
             
             for id, lm in enumerate(face_landmarks.landmark):
-                print(len(id))
+                # print(len(id))
                 h, w, c = annotated_image.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
+                print(f"{id} : {cx, cy}")
+                if id == 0:
+                    cv2.circle(annotated_image, (cx, cy), 3, (255, 0, 0), -1)
                 points['label'] = label
-                points[id] = cx
-                points[id + len(id)] = cy
+                # points[id] = cx
+                # points[id + len(id)] = cy
 
         # load_json(points)
-        # resize_and_show(annotated_image)
+        resize_and_show(annotated_image)

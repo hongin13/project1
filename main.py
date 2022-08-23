@@ -10,7 +10,7 @@ labels = ['Rat', 'Cow', 'Tiger', 'Rabbit', 'Dragon', 'Snake',
  'Horse', 'Sheep', 'Monkey', 'Chicken', 'Dog', 'Pig']
 
 l_json = []
-for root, dirs, filenames in os.walk('json2'):
+for root, dirs, filenames in os.walk('json3'):
     for filename in filenames:
         path = os.path.join(root, filename)
         with open(path, 'r') as f:
@@ -69,7 +69,7 @@ print(cross_val_score(m3, X, y, cv=5).mean())
 print(cross_val_score(ec, X, y, cv=5).mean())
 
 # %%
-# data.to_csv('data.csv')
+data.to_csv('data3.csv')
 # %%
 print(x_data.iloc[0])
 # %%

@@ -28,10 +28,10 @@ def resize_and_show(image):
     else:
         img = cv2.resize(image, (math.floor(w/(h/DESIRED_HEIGHT)), DESIRED_HEIGHT))
     cv2.imshow('img', img)
-    cv2.waitKey(1)
+    cv2.waitKey(3)
 
 def load_json(x):
-    with open(f'json2/features_{count}.json', 'w') as f:
+    with open(f'json3/features_{count}.json', 'w') as f:
         json.dump(x, f)
 
 # for root, dirs, filenames in os.walk('Images'):
@@ -107,13 +107,13 @@ with mp_face_mesh.FaceMesh(static_image_mode=True, refine_landmarks=True, max_nu
         # face_mesh
         if not results.multi_face_landmarks:
             continue
-        annotated_image = image.copy()
+        annotated_image = image.copy()  
         # cv2.imshow('img', annotated_image)
         # cv2.waitKey(0)
         for face_landmarks in results.multi_face_landmarks:
             # mp_drawing.draw_landmarks(image=annotated_image, landmark_list=face_landmarks)
-            mp_drawing.draw_landmarks(image=annotated_image, landmark_list=face_landmarks, connections=mp_face_mesh.FACEMESH_TESSELATION,
-             landmark_drawing_spec=None, connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_tesselation_style())
+            # mp_drawing.draw_landmarks(image=annotated_image, landmark_list=face_landmarks, connections=mp_face_mesh.FACEMESH_TESSELATION,
+            #  landmark_drawing_spec=None, connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_tesselation_style())
             # mp_drawing.draw_landmarks(image=annotated_image, landmark_list=face_landmarks, connections=mp_face_mesh.FACEMESH_CONTOURS,
             #  landmark_drawing_spec=None, connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_contours_style())
             # mp_drawing.draw_landmarks(image=annotated_image, landmark_list=face_landmarks, connections=mp_face_mesh.FACEMESH_IRISES,
@@ -124,10 +124,13 @@ with mp_face_mesh.FaceMesh(static_image_mode=True, refine_landmarks=True, max_nu
                 h, w, c = annotated_image.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
                 points['label'] = label
-                points[id] = cx
-                points[id + 478] = cy
+                points[id] = ((cx / w) + (cy / h)) / 2
+                # points[id + 478] = cy
+                # print(f"{id} : {cx, cy}")
+                # for i in range(id):
+                #     cv2.circle(annotated_image, (cx, cy), 3, (255, 0, 0), -1)
 
         load_json(points)
-        resize_and_show(annotated_image)
+        # resize_and_show(annotated_image)
         
 
