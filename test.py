@@ -37,7 +37,7 @@ def load_json(x):
 # for root, dirs, filenames in os.walk('Images'):
 for root, dirs, filenames in os.walk('C:/Users/aischool/Desktop/test'):
     for filename in filenames:
-        print(filename)
+        # print(filename)
         path = os.path.join(root, filename)
         image = cv2.imread(path)
         if image is None:

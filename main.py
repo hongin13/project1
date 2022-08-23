@@ -35,35 +35,41 @@ print(x_data.shape, tt_x.shape, y_data.shape, tt_y.shape)
 
 #%%
 from sklearn.tree import DecisionTreeClassifier
-dt1 = DecisionTreeClassifier()
-dt1.fit(x_data, y_data)
-print(dt1.score(x_data, y_data), dt1.score(tt_x, tt_y))
-print(dt1.predict(tt_x[:5]))
+m1 = DecisionTreeClassifier(random_state=42)
+m1.fit(x_data, y_data)
+print(m1.score(x_data, y_data), m1.score(tt_x, tt_y))
+print(m1.predict(tt_x[:5]))
 print(list(tt_y[:5]))
 
 # %%
 from sklearn.linear_model import LogisticRegression
-lr1 = LogisticRegression()
-lr1.fit(x_data, y_data)
-print(lr1.score(x_data, y_data), lr1.score(tt_x, tt_y))
-print(lr1.predict(tt_x[:5]))
-print(list(tt_y[:5]))
-
-# %%
-from sklearn.ensemble import AdaBoostClassifier
-ab1 = AdaBoostClassifier()
-ab1.fit(x_data, y_data)
-print(ab1.score(x_data, y_data), ab1.score(tt_x, tt_y))
-print(ab1.predict(tt_x[:5]))
+m2 = LogisticRegression()
+m2.fit(x_data, y_data)
+print(m2.score(x_data, y_data), m2.score(tt_x, tt_y))
+print(m2.predict(tt_x[:5]))
 print(list(tt_y[:5]))
 
 # %%
 from sklearn.ensemble import RandomForestClassifier
-rf1 = RandomForestClassifier()
-rf1.fit(x_data, y_data)
-print(rf1.score(x_data, y_data), rf1.score(tt_x, tt_y))
-print(rf1.predict(tt_x[:5]))
+m3 = RandomForestClassifier()
+m3.fit(x_data, y_data)
+print(m3.score(x_data, y_data), m3.score(tt_x, tt_y))
+print(m3.predict(tt_x[:5]))
 print(list(tt_y[:5]))
 
+#%%
+from sklearn.ensemble import VotingClassifier
+ec = VotingClassifier([('m1', m1), ('m2', m2), ('m3', m3)], voting='hard')
 
+# %%
+from sklearn.model_selection import cross_val_score
+print(cross_val_score(m1, X, y, cv=5).mean())
+print(cross_val_score(m2, X, y, cv=5).mean())
+print(cross_val_score(m3, X, y, cv=5).mean())
+print(cross_val_score(ec, X, y, cv=5).mean())
+
+# %%
+# data.to_csv('data.csv')
+# %%
+print(x_data.iloc[0])
 # %%
