@@ -1,100 +1,38 @@
-import mediapipe as mp
+import pandas as pd
 import cv2
-import os
-import math
+import pandas as pd
 import numpy as np
-import json
+import matplotlib.pyplot as plt
+import seaborn as sns
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras.callbacks import ReduceLROnPlateau
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras import optimizers
+from keras.utils.np_utils import to_categorical
+from keras.callbacks import EarlyStopping, ModelCheckpoint
+from keras.layers import BatchNormalization, Dropout
+from sklearn.model_selection import train_test_split
 
-meta = []
-# labels = ['Rat', 'Cow', 'Tiger', 'Rabbit', 'Dragon', 'Snake',
-#           'Horse', 'Sheep', 'Monkey', 'Chicken', 'Dog', 'Pig']
+import facemesh_test
+import prep_test
 
-count = 0
-DESIRED_HEIGHT = 480
-DESIRED_WIDTH = 480
-def resize(image):
-    h, w = image.shape[:2]
-    if h < w:
-        img = cv2.resize(image, (DESIRED_WIDTH, math.floor(h/(w/DESIRED_WIDTH))))
-    else:
-        img = cv2.resize(image, (math.floor(w/(h/DESIRED_HEIGHT)), DESIRED_HEIGHT))
-    return img
-    # cv2.imshow('img', img)
-    # cv2.waitKey(0)
+facemesh_test.run()
+prep_test.run()
 
-def resize_and_show(image):
-    h, w = image.shape[:2]
-    if h < w:
-        img = cv2.resize(image, (DESIRED_WIDTH, math.floor(h/(w/DESIRED_WIDTH))))
-    else:
-        img = cv2.resize(image, (math.floor(w/(h/DESIRED_HEIGHT)), DESIRED_HEIGHT))
-    cv2.imshow('img', img)
-    cv2.waitKey(1)
+final_data = pd.read_csv('csv/test_final.csv')
+new_final_data = final_data.transpose()
+new_final_data = new_final_data[1:]
+final_data = new_final_data.transpose()
+final_y = pd.read_csv('csv/final_y.csv')
+new_final_y = final_y.transpose()
+new_final_y = new_final_y[1:]
+final_y = new_final_y.transpose()
+final_to_y = to_categorical(final_y)
 
-def load_json(x):
-    with open(f'test_json/features_{count}.json', 'w') as f:
-        json.dump(x, f)
+from keras.models import load_model
+l_m = load_model('best_model.h')
 
-# for root, dirs, filenames in os.walk('Images'):
-for root, dirs, filenames in os.walk('C:/Users/aischool/Desktop/test'):
-    for filename in filenames:
-        # print(filename)
-        path = os.path.join(root, filename)
-        image = cv2.imread(path)
-        if image is None:
-            print("Error : ", path)
-            continue
-        resize(image)
-
-        first, last = os.path.splitext(filename)
-        path = os.path.join(root, first + '.jpg')
-        meta.append((path))
-print(len(meta))
-
-images = {}
-for i in range(len(meta)):
-    # print(meta[i][0])
-    images[i] = cv2.imread(meta[i])
-
-mp_face_mesh = mp.solutions.face_mesh
-
-mp_drawing = mp.solutions.drawing_utils 
-mp_drawing_styles = mp.solutions.drawing_styles
-
-with mp_face_mesh.FaceMesh(static_image_mode=True, refine_landmarks=True, max_num_faces=2, min_detection_confidence=0.5) as face_mesh:
-    for count, data in images.items():
-        image = data[0]
-        points = {}
-        # Convert the BGR image to RGB and process it with MediaPipe Face Mesh.
-        results = face_mesh.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-
-        # Draw face landmarks of each face.
-        
-        # face_mesh
-        if not results.multi_face_landmarks:
-            continue
-        annotated_image = image.copy()
-        # cv2.imshow('img', annotated_image)
-        # cv2.waitKey(0)
-        for face_landmarks in results.multi_face_landmarks:
-            # mp_drawing.draw_landmarks(image=annotated_image, landmark_list=face_landmarks)
-            mp_drawing.draw_landmarks(image=annotated_image, landmark_list=face_landmarks, connections=mp_face_mesh.FACEMESH_TESSELATION,
-             landmark_drawing_spec=None, connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_tesselation_style())
-            # mp_drawing.draw_landmarks(image=annotated_image, landmark_list=face_landmarks, connections=mp_face_mesh.FACEMESH_CONTOURS,
-            #  landmark_drawing_spec=None, connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_contours_style())
-            # mp_drawing.draw_landmarks(image=annotated_image, landmark_list=face_landmarks, connections=mp_face_mesh.FACEMESH_IRISES,
-            #  landmark_drawing_spec=None, connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_iris_connections_style())
-            
-            for id, lm in enumerate(face_landmarks.landmark):
-                # print(len(id))
-                h, w, c = annotated_image.shape
-                cx, cy = int(lm.x * w), int(lm.y * h)
-                print(f"{id} : {cx, cy}")
-                if id == 0:
-                    cv2.circle(annotated_image, (cx, cy), 3, (255, 0, 0), -1)
-                points['label'] = label
-                # points[id] = cx
-                # points[id + len(id)] = cy
-
-        # load_json(points)
-        resize_and_show(annotated_image)
+y_pred = l_m.predict(final_data)
+# l_m.evaluate(final_data, final_y)

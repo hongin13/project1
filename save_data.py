@@ -9,8 +9,8 @@
 # labels = ['Rat', 'Cow', 'Tiger', 'Rabbit', 'Dragon', 'Snake',
 #           'Horse', 'Sheep', 'Monkey', 'Chicken', 'Dog', 'Pig']
 
-# # for root, dirs, filenames in os.walk('Images'):
-# for root, dirs, filenames in os.walk('C:/Users/aischool/Desktop/image'):
+# for root, dirs, filenames in os.walk('Images'):
+# # for root, dirs, filenames in os.walk('C:/Users/aischool/Desktop/image'):
 #     for filename in filenames:
 #         path = os.path.join(root, filename)
 #         image = cv2.imread(path)
@@ -29,7 +29,7 @@
 #         path = os.path.join(root, first + '.jpg')
 #         meta.append((path, label))
 
-# # print(meta)
+# # print(len(meta))
 
 # count = 0
 # features = ['face', 'eyebrow', 'eyebtween', 'low', 'philtrum', 'uplib', 'downlib', 'nosewidth', 'noseheight', 'eyesize', 'mouth']
@@ -75,44 +75,52 @@
 #     print(image.shape)    
 #     detector = dlib.get_frontal_face_detector()
 #     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
-#     print(1)
+#     # print(1)
 #     rects = detector(image[..., ::-1], 1)
 #     if not len(rects):
 #         continue
 #     dst = image.copy()
-#     print(2)
+#     # print(2)
 #     for rect in rects:
 #         shape = predictor(image[..., ::-1], rect)
 
-#         eyebrow = []
-#         for k, v in dic_f.items():
-#             for i in v:
-#                 part = shape.part(i)
-#                 p = (part.x, part.y)
-#                 eyebrow.append(p)
-#     # print(eyebrow)
-#             if len(eyebrow) == 5:
-#                 a = eyebrow[2]
-#                 b = eyebrow[3]
-#                 c = eyebrow.pop()
-#                 eyebrow[2] = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
-#                 eyebrow[3] = c
-#             # print(eyebrow)
-#             val = area(eyebrow[0], eyebrow[1], eyebrow[2], eyebrow[3])
-#             result.append((val, l))
-#             print(result)
+#         for i in range(68):
+#             part = shape.part(i)
+#             p = (part.x, part.y)
+#             cv2.circle(dst, p, 3, (255, 0, 0), -1)
+        
+#         cv2.imshow('dst', dst)
+#         cv2.waitKey(0)
+
+#     #     eyebrow = []
+#     #     for k, v in dic_f.items():
+#     #         for i in v:
+#     #             part = shape.part(i)
+#     #             p = (part.x, part.y)
+#     #             eyebrow.append(p)
+#     # # print(eyebrow)
+#     #             if len(eyebrow) == 5:
+#     #                 a = eyebrow[2]
+#     #                 b = eyebrow[3]
+#     #                 c = eyebrow.pop()
+#     #                 eyebrow[2] = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+#     #                 eyebrow[3] = c
+#     #         # print(eyebrow)
+#     #         val = area(eyebrow[0], eyebrow[1], eyebrow[2], eyebrow[3])
+#     #         result.append((val, l))
+#     #         print(result)
     
-#     le = result[9]
-#     re = result[10]
-#     m = result.pop()
-#     result[9] = ((le[0] + re[0]) / 2, int((le[1] + re[1]) / 2))
-#     result[10] = m
-#     for i in range(len(result)):
-#         dic['label'] = labels[result[i][1]]
-#         dic[features[i]] = result[i][0]
+#     # le = result[9]
+#     # re = result[10]
+#     # m = result.pop()
+#     # result[9] = ((le[0] + re[0]) / 2, int((le[1] + re[1]) / 2))
+#     # result[10] = m
+#     # for i in range(len(result)):
+#     #     dic['label'] = labels[result[i][1]]
+#     #     dic[features[i]] = result[i][0]
     
-#     print(dic)
-#     for items in dic:
-#         # with open(f'json/features_{count}.json', 'w') as f:
-#         with open(f'json2/features_{count}.json', 'w') as f:
-#             json.dump(dic, f)
+#     # # print(dic)
+#     # for items in dic:
+#     #     # with open(f'json/features_{count}.json', 'w') as f:
+#     #     with open(f'68_json/features_{count}.json', 'w') as f:
+#     #         json.dump(dic, f)
