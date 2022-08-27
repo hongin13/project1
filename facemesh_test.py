@@ -28,10 +28,10 @@ def run():
         cv2.waitKey(1)
 
     def load_json(x):
-        with open(f'test_json/test{count}.json', 'w') as f:
+        with open(f'test_json/test.json', 'w') as f:
             json.dump(x, f)
 
-    for root, dirs, filenames in os.walk('C:/Users/aischool/Desktop/test'):
+    for root, dirs, filenames in os.walk('C:/Users/aischool/Desktop/project/model/test'):
         for filename in filenames:
             path = os.path.join(root, filename)
             image = cv2.imread(path)
