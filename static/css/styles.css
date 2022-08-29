@@ -75,6 +75,12 @@
     scroll-behavior: smooth;
   }
 }
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   margin: 0;
@@ -11479,7 +11485,7 @@ footer.footer .social-link:hover {
   background: url(../assets/img/back.png);
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 .masthead h1, .masthead .h1 {
   font-size: 4rem;

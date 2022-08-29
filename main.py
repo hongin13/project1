@@ -18,7 +18,6 @@ def show_index():
 
 @app.route("/file_upload", methods = ['GET', 'POST'])
 def file_upload():
-    print("file_upload")
     if request.method == 'POST':
         f = request.files['file']
         f.save('./test/' + secure_filename(f.filename))

@@ -1,46 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
+    
     <title>결과</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdeliver.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script scr="https://cdn.jsdeliver.net/np,/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    
     <style>
-        #main{
-            background-size: cover;
-            background-color:green;
-        }
-        #wrapper{
-            background-color:red;
-            margin:auto;
-            text-align:center;
-        }
-        #maintext{
-            width:center;
-            margin:center;
-        }
-        /* #file{
-            width:100px;
-            margin:auto;
-            display:block;
-        } */
-        /* #submit{
-            width:100px;
-            margin:auto;
-            display:block;
-        } */
+        @font-face {
+        font-family: 'GmarketSansBold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
     </style>
 </head>
-<body id="main">
-    <div class="container-sm" id="wrapper">
-        <form action="http://localhost:5000/file_upload" method="POST"
-        enctype = "multipart/form-data">
-        <h1 id="maintext"> Image Upload! </h1>
-        <input type="file" name="file" /><br>
-        <input type="submit" name="submit" />
+<body id="main" style="background: url(../static/assets/img/people.jpg) no-repeat; background-size: cover;">
+    <span style="text-align: center;">
+    <div class="container-sm" id="wrapper" style=" font-family: 'GmarketSansBold'; background-color: rgba(255, 255, 255, 0.5); margin-left: 35%; margin-right: 35%; margin-top: 15%;">
+        <form action="http://localhost:5000/file_upload" method="POST" enctype = "multipart/form-data" style="font-family: 'GmarketSansBold'">
+        <h1 id="maintext" style="font-family: 'GmarketSansBold'"> Image Upload! </h1>
+        <input type="file" name="file" style="font-family: 'GmarketSansBold';" /><br>
+        <input type="submit" name="submit" style="margin-bottom: 6%;" />
         </form>
     </div>
+</span>
 </body>
 
 
