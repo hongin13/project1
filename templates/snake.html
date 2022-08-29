@@ -1,15 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>
         결과
     </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p>
-        <img src="{{url_for('static', filename = '/img/result_Snake.jpg')}}">
-    </p>
-    <p>
-        {{message}}
-    </p>
+    <link href="../static/css/snake.css" rel="stylesheet"/>
+    <body id="main">
+        <div id="header">
+            <div id="title" align="center">
+                </div>
+            </div>
+        </div>
+        <span>
+            <img src="../static/img/result_Snake.jpg">
+            <p id="font_12" style="color: white; font-size: 100px; margin-left: 30%; line-height: 10px; margin-top: 100px; font-weight: 900;"><strong>뱀</strong></p>
+            <p id="font_chr" style="color: white; font-size: 50px; margin-left: 30%;line-height: 10px; font-weight: 100;">#잠재력 #상상력</p>
+            <div style="border:4px solid white ;margin-left: 30%;">
+            <p id="font_info" style="color: white; font-size: 30px; margin-left: 5%;"><strong>뱀상을 가진 자들은 무슨 일이든 자력으로 이룩하려는 의지력을 갖고 곤경에 처해도 굴하지 않는 용의주도하고 자유로운 발상을 겸비한 일꾼들이다. 웅대한 꿈을 가지고 의욕이 뛰어나 맡은 바 본분을 완수하는 기질을 가졌다. 얼굴은 준수한 편이나 눈빛이 매우 차서 다소 대인관계에 어려움이 있기도 하다. 원래 뱀이란 동물은 독을 품으면 기어이 물어야 하는 잔악하고 음란한 성질을 가졌다. 고로 뱀의 인상을 가진 사람은 용맹과 투기심이 강하고 가슴 속에 남모를 한이 있어 독선이 지나치기도 하며 고독하다. 머리가 명석한 편은 아니나 소위 말하는 잔머리를 잘 쓴다. 어려운 일을 쉽게 하며 주변을 잘 움직이고 분위기 조성에 능한것이다. 가무와 여색을 몹시 좋아하는 편인데 선성(善性)을 잘 기르고 마음을 잘 다스린다면 이무기가 아닌 용이 되어 크게 대성할 수 있을 것이다.</p></strong>
+            </span>
+        </div>
+            <span>  
+            <p id="font_ment" style="color: rgba(252, 123, 150, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 18%;">상대방을 사로잡는</p>
+            <p id="font_ment2" style="color: rgba(253, 89, 138, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 2%;">추천멘트</p>
+            <p id="font_ment3" style="color: rgba(255, 255, 255, 0.5); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 4%;">'이거 마시면 나랑 사귀는거다.'</p>
+            <img src="../static/img_ment/snake_ment.jpg" id="img_ment">
+        </span>
+    </body>
 </body>
 </html>

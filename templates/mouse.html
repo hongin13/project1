@@ -1,15 +1,36 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>
         결과
     </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p>
-        <img src="{{url_for('static', filename = '/img/result_Mouse.jpg')}}">
-    </p>
-    <p>
-        {{message}}
-    </p>
+    <link href="../static/css/mouse.css" rel="stylesheet"/>
+    <body id="main">
+        <div id="header">
+            <div id="title" align="center">
+                </div>
+            </div>
+        </div>
+        <span>
+            <img src="../static/img/result_Mouse.jpg">
+            <p id="font_12" style="color: white; font-size: 100px; margin-left: 30%; line-height: 10px; margin-top: 100px; font-weight: 900;"><strong>쥐</strong></p>
+            <p id="font_chr" style="color: white; font-size: 50px; margin-left: 30%;line-height: 10px; font-weight: 100;">#완벽 #치밀</p>
+            <div style="border:4px solid white ;margin-left: 30%;">
+            <p id="font_info" style="color: white; font-size: 30px; margin-left: 5%;"><strong>쥐상을 가진 사람 중 매우 근면하고 절약가가 많다. 감수성이 예민하고 돈의 가치를 굳게 신봉하는 사람으로 사물의 세부적인 면과 금전적인 면을 간과하지 않는다. 그래서 이 동물 상을 가진 사람 중 매우 근면하고 절약가가 많다. 남들이 모르는 곳에서 노력하는 타입으로 인내심이 강하기로는 12동물 중 최고라고 할 수 있다. 고상한 품성을 풍기며 매사 경우가 밝고 계산까지 치밀하여 그야말로 높은 이상을 갖고있는 완벽주의자라 볼 수 있다. 예술적 기질이 있어 사물에 대한 기교가 명민하지만 질투와 욕심이 많고 혼자서만 편하려는 이기심이 도사리고 있다. 많은 사람이 모여 있는 곳에서 자신의 의견을 펼치는 편은 아니지만 자신과 같은 의견이 나오면 그곳에 편승하여 군중심리의 결정에 따르는 경향이 많다. 또한 창조적이면서도 과학적인 것에 많은 관심을 갖고 있어 간혹 주위 사람들로부터 이상하다는 소리를 듣는 경우도 있다. 남들 시선에 벗어나 본인에게만 집중한다면 칭송을 자자하게 받으며 이름을 떨칠 수 있을 것이다.
+            </p></strong>
+            </div>
+            </span>
+            <span>  
+            <p id="font_ment" style="color: rgba(252, 123, 150, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 18%;">상대방을 사로잡는</p>
+            <p id="font_ment2" style="color: rgba(253, 89, 138, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 2%;">추천멘트</p>
+            <p id="font_ment3" style="color: rgba(255, 255, 255, 0.5); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 4%;">'얼마면 돼'</p>
+            <img src="../static/img_ment/mouse_ment.jpg" id="img_ment">
+        </span>
+    </body>
 </body>
 </html>

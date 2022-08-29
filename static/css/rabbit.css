@@ -1,0 +1,80 @@
+@charset "UTF-8";
+#main {
+    background: rgba(115, 196, 193, 0.55);
+    background-size: cover;
+}
+#header {
+    align-items: center;
+    margin-top: 50px;
+    display: flex;
+}
+    img {
+        position: absolute;
+        width: 400px;
+        height: 600px;
+        left: 120px;
+        top: 100px;
+        background: url(../static/img/result_Rabbit.jpg), #D9D9D9;
+        box-shadow: 33px 33px 50px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+    }
+    #img_ment {
+        position: absolute;
+        width: 300px;
+        height: 400px;
+        left: 115px;
+        top: 1050px;
+        background: url(../static/img_ment/rabbit_ment.jpg), #D9D9D9;
+        border-radius: 20px;
+    }
+    .reverse {
+        transform:rotate(90deg);
+        -moz-transform: scaleX(-1); 
+        -o-transform: scaleX(-1); 
+        -webkit-transform: scaleX(-1); 
+        transform: scaleX(-1);   
+    }
+    @font-face {
+        font-family: 'GmarketSansLight';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'GmarketSansBold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+   
+    @font-face {
+        font-family: 'BMDOHYEON';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    #font_12{
+        font-family: 'GmarketSansBold';
+        font-weight: bold;
+        font-weight: 1000;
+    }
+    #font_chr{
+        font-family: 'BMDOHYEON';
+        font-weight: 100;
+    }
+    #font_info{
+        font-family: 'GmarketSansLight';
+    }
+
+    #font_ment{
+        font-family: 'GmarketSansLight';
+    }
+
+    #font_ment2{
+        font-family: 'GmarketSansBold';
+    }
+    #font_ment3{
+        font-family: 'GmarketSansLight';
+    }

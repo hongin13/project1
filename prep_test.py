@@ -17,7 +17,6 @@ def run():
 
     data = pd.read_csv('csv/test.csv')
     data = data.drop(['Unnamed: 0'], axis=1)
-    name = data['name']
 
     x = data.drop(['name'], axis=1)
 

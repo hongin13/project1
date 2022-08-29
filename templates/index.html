@@ -37,7 +37,7 @@
             <div class="container px-4 px-lg-5 text-center">
                 <!-- <h1 class="mb-1">Stylish Portfolio</h1> -->
                 <!-- <h3 class="mb-5"><em>A Free Bootstrap Theme by Start Bootstrap</em></h3> -->
-                <a class="btn btn-primary btn-xl" href="#callout">인홍지능</a>
+                <a class="btn btn-primary btn-xl" href="#callout" style="margin-top:15%">인홍지능</a>
             </div>
         </header>
         
@@ -45,15 +45,11 @@
         <section class="callout", id="callout">
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mx-auto mb-5">
-                    Welcome to
-                    <em>your</em>
-                    next website!
+                    Welcome to<br>
+                    ganzi<br>
+                    webpage!
                 </h2>
-                <!-- <div>
-                    <input class="btn btn-primary btn-xl" type="file" name="file" id="inputFile1">Upload
-                    <input type="submit" value="Upload">
-                </div> -->
-                <a class="btn btn-primary btn-xl" href="result.html">Service!</a>
+                <a class="btn btn-primary btn-xl" href="./file_upload">Service!</a>
             </div>
         </section>
         
@@ -62,13 +58,7 @@
             <div class="container px-4 px-lg-5">
                 <ul class="list-inline mb-5">
                     <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
+                        <a class="social-link rounded-circle text-white" href="https://www.github.com/hongin13/project1"><i class="icon-social-github"></i></a>
                     </li>
                 </ul>
                 <p class="text-muted small mb-0">Copyright &copy; Your Website 2022</p>
@@ -81,4 +71,22 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+    <script>
+        function init() {
+            var inputFile = document.getElementById('inputFile1');
+            inputFile.addEventListener('../test/', mostrarImagen, false);
+        }
+        function mostrarImagen(event) {
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                var img = document.getElementById('imagen');
+                img.src = event.target.result;
+                img.width = 500;
+                img.height = 500;
+            }
+            reader.readAsDataURL(file);
+        }
+        window.addEventListener('load', init, false);
+    </script>
 </html>

@@ -1,15 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>
         결과
     </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p>
-        <img src="{{url_for('static', filename = '/img/result_Cow.jpg')}}">
-    </p>
-    <p>
-        {{message}}
-    </p>
+    <link href="../static/css/cow.css" rel="stylesheet"/>
+    <body id="main">
+        <div id="header">
+            <div id="title" align="center">
+                </div>
+            </div>
+        </div>
+        <span>
+            <img src="../static/img/result_Cow.jpg">
+            <p id="font_12" style="color: white; font-size: 100px; margin-left: 30%; line-height: 10px; margin-top: 100px; font-weight: 900;"><strong>소</strong></p>
+            <p id="font_chr" style="color: white; font-size: 50px; margin-left: 30%;line-height: 10px; font-weight: 100;">#근면 #인내</p>
+            <div style="border:4px solid white ;margin-left: 30%;">
+            <p id="font_info" style="color: white; font-size: 30px; margin-left: 5%;"><strong>겉으로는 개성이 없고 엄격한 성격처럼 보일 수 있지만 소상을 가진 자는 따뜻한 마음을 갖고 있다. 이로움이 잘 따르므로 집안이 부유하고 화목하게 되는데, 자칫 문제가 될 수 있는 것은 보수적인 성향이 있어 잘못하면 자신이 이루어 놓은 부귀영화를 한순간에 잃을 수 있다. 근면, 성실을 기본 바탕으로 두고 있으며 외골수 같은 모습도 있어 주위의 사람들로부터 따가운 시선을 받기도 한다. 간혹 이를 동정하는 사람들도 있는데 이를 잘못 받아들여 자신을 인정했다고 착각을 하는 상황도 간혹 발생한다. 그렇지만 일반적으로는 인정이 많아 유덕한 사람이란 평을 받으며 남에게 봉사하고 베풀 줄 아는 보시형으로서 내면에 많은 인정을 가지고 있다. 게다가 책임감이 강하여 혹 일이 잘못되더라도 남을 원망하거나 후회 하지 않는 우직한 성격이다. 성격은 급하지만 행동이 느리고 우유부단하여 남에게 이용당해 낭패를 볼 수 있으니 항상 이를 의식하고 조심하는 것이 좋다. 한 번 화가 나면 풀기 어렵고 그 노기가 오래가는 성격으로 처세의 불리함이 우려될 수 있으니 평소에 화만 잘 다스린다면 어느 곳을 가더라도 사랑받고 항상 마음이 평화로울 수 있을 것이다.</p></strong>
+                </div>
+            </span>
+            <span>  
+            <p id="font_ment" style="color: rgba(252, 123, 150, 1); font-size: 50px; margin-left: 25%; line-height: 10px; margin-top: 18%;">상대방을 사로잡는</p>
+            <p id="font_ment2" style="color: rgba(253, 89, 138, 1); font-size: 50px; margin-left: 25%; line-height: 10px; margin-top: 2%;">추천멘트</p>
+            <p id="font_ment3" style="color: rgba(255, 255, 255, 0.5); font-size: 50px; margin-left: 25%; line-height: 50px; margin-top: 4%;">'날이 좋아서, 날이 좋지 않아서, <br>날이 적당해서 모든 날이 좋았다.'</p>
+            <img src="../static/img_ment/cow_ment.jpg" id="img_ment">
+        </span>
+    </body>
 </body>
 </html>

@@ -7,7 +7,6 @@ import json
 
 def run():
     meta = []
-    count = 0
     DESIRED_HEIGHT = 1280
     DESIRED_WIDTH = 1280
     def resize(image):
@@ -49,9 +48,6 @@ def run():
         images[i] = cv2.imread(meta[i]), meta[i]
 
     mp_face_mesh = mp.solutions.face_mesh
-
-    mp_drawing = mp.solutions.drawing_utils 
-    mp_drawing_styles = mp.solutions.drawing_styles
 
     with mp_face_mesh.FaceMesh(static_image_mode=True, refine_landmarks=True, max_num_faces=2, min_detection_confidence=0.5) as face_mesh:
         for count, data in images.items():

@@ -1,15 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>
         결과
     </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p>
-        <img src="{{url_for('static', filename = '/img/result_Dog.jpg')}}">
-    </p>
-    <p>
-        {{message}}
-    </p>
+    <link href="../static/css/dog.css" rel="stylesheet"/>
+    <body id="main">
+        <div id="header">
+            <div id="title" align="center">
+                </div>
+            </div>
+        </div>
+        <span>
+            <img src="../static/img/result_Dog.jpg">
+            <p id="font_12" style="color: white; font-size: 100px; margin-left: 30%; line-height: 10px; margin-top: 100px; font-weight: 900;"><strong>개</strong></p>
+            <p id="font_chr" style="color: white; font-size: 50px; margin-left: 30%;line-height: 10px; font-weight: 100;">#총명 #책임감</p>
+            <div style="border:4px solid white ;margin-left: 30%;">
+            <p id="font_info" style="color: white; font-size: 30px; margin-left: 5%;"><strong>개 상은 총명하고 이지적이며 자존심과 책임감이 강하고 어떤 일도 해내는 의지와 관찰력이 특성이다. 하지만 고집과 반발심은 적절한 자제력이 필요하다. 솔직담백한 것이 매력이며 인정이 많은 성격으로 신세를 지면 반드시 신세를 갚고야 마는 보은정신이 있다. 솔직담백함으로 인해 남들에게 공연히 미움을 받기도 하지만 의리와 신의가 있어 결국 주위의 인정을 받는다. 겉으로는 소심한 듯 보이지만 속으로는 은근히 남을 얕보는 경향이 있고 야심과 자존심이 강하다. 자상하고 인자한 척을 할 뿐 속으로는 신의가 없고 부도덕한 경우도 있다. 상당히 내성적이면서도 자신의 이익을 위해서는 저돌적인 성격을 가지고 있다. 다만 이익을 위한다 하지만 자신의 노력여하에 따른 이익을 구하는 것이지 결코 요행을 바라거나 횡재를 원하지 않는다. 또한 충성심이 강하다. 자신이 모시고 있는 사람에게 충성을 다한다. 주인을 위해서 자신을 희생하는 충견의 성향이 강하다. 하지만 따르는 주인이 빈번하게 바뀐다는 것이 문제이다. 따라서 이성 교제가 빈번하여 젊은 날은 화려하지만 노년에는 쓸쓸할 수 있으니 젊은 날 현명하고 지혜로운 사람을 곁에 두는 것을 추천한다.</p></strong>
+                </div>
+            </span>
+            <span>  
+            <p id="font_ment" style="color: rgba(252, 123, 150, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 18%;">상대방을 사로잡는</p>
+            <p id="font_ment2" style="color: rgba(253, 89, 138, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 2%;">추천멘트</p>
+            <p id="font_ment3" style="color: rgba(255, 255, 255, 0.5); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 4%;">'시켜줘 금잔디 명예소방관'</p>
+            <img src="../static/img_ment/dog_ment.jpg" id="img_ment">
+        </span>
+    </body>
 </body>
 </html>

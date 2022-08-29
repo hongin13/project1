@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from keras.utils.np_utils import to_categorical
 
 import facemesh_test
 import prep_test
@@ -20,8 +19,7 @@ def run():
     new_final_y = final_y.transpose()
     new_final_y = new_final_y[1:]
     final_y = new_final_y.transpose()
-    final_to_y = to_categorical(final_y)
-
+    
     from keras.models import load_model
     l_m = load_model('best_model.h')
 

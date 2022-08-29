@@ -1,15 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>
         결과
     </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p>
-        <img src="{{url_for('static', filename = '/img/result_Horse.jpg')}}">
-    </p>
-    <p>
-        {{message}}
-    </p>
+    <link href="../static/css/horse.css" rel="stylesheet"/>
+    <body id="main">
+        <div id="header">
+            <div id="title" align="center">
+                </div>
+            </div>
+        </div>
+        <span>
+            <img src="../static/img/result_Horse.jpg">
+            <p id="font_12" style="color: white; font-size: 100px; margin-left: 30%; line-height: 10px; margin-top: 100px; font-weight: 900;"><strong>말</strong></p>
+            <p id="font_chr" style="color: white; font-size: 50px; margin-left: 30%;line-height: 10px; font-weight: 100;">#추진력 대마왕 #</p>
+            <div style="border:4px solid white ;margin-left: 30%;">
+            <p id="font_info" style="color: white; font-size: 30px; margin-left: 5%;"><strong>말 상을 가진 사람은 발랄하고 인기 있으며 기지가 있다. 썩 잘생긴 용모는 아니지만 성적 매력이 많다. 실속있고 따뜻하게 흥미를 끌며 매우 지각 있고 이야기하기를 좋아한다. 동정심이 많고 정직하며 근면성은 있으나 게으르고 인내심이 부족한 것이 흠이다. 또 은근히 공짜를 바라고 횡재를 꿈꾸는데 이는 도리어 화가 될 수 있으니 일확천금을 꿈꾸지 말길 바란다. 게다가 평소 미식과 사치를 좋아하는 경향이 있으니 자중해야 할 것이다. 집념이 강해 한번 시작을 하게 되면 누구보다도 열심히 하게 되며 자신의 안위 따위는 그리 중요하게 생각지 않는다. 그러나 한번 시작한 일은 누구보다 열정적이지만 시작하지 않은 일에 대해서는 방관하게 되는 경우가 많으니 유의할 점이라 하겠다. 자신이 직접 관여하지 않은 일에도 관심을 보일 것을 추천한다. 글과 그림에 조예가 깊은 편이다. 이 외에도 여러 가지에 능하고 재주도 많으니 이를 잘 살린다면 여러 가지 그 누구보다 생활의 여유를 가질 수 있을것이다.</p></strong>
+                </div>
+            </span>
+            <span>  
+            <p id="font_ment" style="color: rgba(252, 123, 150, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 18%;">상대방을 사로잡는</p>
+            <p id="font_ment2" style="color: rgba(253, 89, 138, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 2%;">추천멘트</p>
+            <p id="font_ment3" style="color: rgba(255, 255, 255, 0.5); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 4%;">'길라임씨는 몇 살 때부터 그렇게 예뻤나, 작년부터?'</p>
+            <img src="../static/img_ment/horse_ment.jpg" id="img_ment">
+        </span>
+    </body>
 </body>
 </html>

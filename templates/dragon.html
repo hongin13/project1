@@ -1,15 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>
         결과
     </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p>
-        <img src="{{url_for('static', filename = '/img/result_Dragon.jpg')}}">
-    </p>
-    <p>
-        {{message}}
-    </p>
+    <link href="../static/css/dragon.css" rel="stylesheet"/>
+    <body id="main">
+        <div id="header">
+            <div id="title" align="center">
+                </div>
+            </div>
+        </div>
+        <span>
+            <img src="../static/img/result_Dragon.jpg">
+            <p id="font_12" style="color: white; font-size: 100px; margin-left: 30%; line-height: 10px; margin-top: 100px; font-weight: 900;"><strong>용</strong></p>
+            <p id="font_chr" style="color: white; font-size: 50px; margin-left: 30%;line-height: 10px; font-weight: 100;">#천운 #대길</p>
+            <div style="border:4px solid white ;margin-left: 30%;">
+            <p id="font_info" style="color: white; font-size: 30px; margin-left: 5%;"><strong>주역의 건괘에 비룡재천 이견대인(飛龍在天 利見大人)이라 인간이 용을 보면 좋은 일이 생기거나 귀인을 만나 이익됨이 있다는 뜻으로 용상은 사주학적, 즉 명리학적 견지에서 볼 때 극귀極貴하고 대길상(大吉相)의 운명을 가자고 태어나게 된 것이다. 천운을 타고났다고 할 수 있지만 진실성이 왜곡되어 교활함과 추함으로 작용하지 않도록 주의 해야한다. 용띠 상은 도량이 크며 생명령이 넘치고 끊임없이 앞으로 전진한다. 그러나 독선적이고 독단적이며 자기중심적일 수 있다. 요구하는 것도 많고 무모한 성격도 지니고 있는데 자존심까지 강하여 배타적이며 매우 직선적이라 할 수 있다. 하지만 어느 분위기에도 잘 어울리며 밝은 성격이 이를 다 무마시킨다 할 수 있다. 일에 얽매이기보다는 즐기는 방법을 잘 알고 있으며 어디에 내다 놓아도 굶어 죽지 않을 강한 생활력을 지녔다. 하지만 좋은 이성을 곁에 두고도 다른 이성에게 눈을 돌리는 일도 많고 돈에 관한 개념이 없으니 돈이 모일세가 없다. 당신을 챙겨줄 든든하고 야무진 사람을 곁에 두는 것을 추천한다.</p></strong>
+                </div>
+            </span>
+            <span>  
+            <p id="font_ment" style="color: rgba(252, 123, 150, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 18%;">상대방을 사로잡는</p>
+            <p id="font_ment2" style="color: rgba(253, 89, 138, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 2%;">추천멘트</p>
+            <p id="font_ment3" style="color: rgba(255, 255, 255, 0.5); font-size: 50px; margin-left: 25%;line-height: 50px; margin-top: 4%;">'잊어달라 하였느냐<br>잊으려 하였으나 너를 잊지 못하였다.'</p>
+            <img src="../static/img_ment/dragon_ment.jpg" id="img_ment">
+        </span>
+    </body>
 </body>
 </html>

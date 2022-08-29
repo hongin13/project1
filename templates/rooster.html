@@ -1,15 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>
         결과
     </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p>
-        <img src="{{url_for('static', filename = '/img/result_Rooster.jpg')}}">
-    </p>
-    <p>
-        {{message}}
-    </p>
+    <link href="../static/css/rooster.css" rel="stylesheet"/>
+    <body id="main">
+        <div id="header">
+            <div id="title" align="center">
+                </div>
+            </div>
+        </div>
+        <span>
+            <img src="../static/img/result_Rooster.jpg">
+            <p id="font_12" style="color: white; font-size: 100px; margin-left: 30%; line-height: 10px; margin-top: 100px; font-weight: 900;"><strong>닭</strong></p>
+            <p id="font_chr" style="color: white; font-size: 50px; margin-left: 30%;line-height: 10px; font-weight: 100;">#세련 #로맨틱 #성공적</p>
+            <div style="border:4px solid white ;margin-left: 30%;">
+            <p id="font_info" style="color: white; font-size: 30px; margin-left: 5%;"><strong>닭상은 자신에 대한 확신이 강하고 적극적이지만, 보수적이고 고집스러운 점이 있다. 또한 정보수집 능력과 앞을 내다보는 선견력이 뛰어나며, 무슨 일이든 마무르는 재주를 갖고 있다. 계획적이고 꼼꼼하여 헛일을 하지 않는다. 이 동물상에 속하는 사람은 세련되고 적극적이며 주위로부터 주목받는 것을 좋아한다. 어떠한 상황에서건 자신의 컨디션을 유지할 수 있으며, 때론 자신만한 사람이 없다고 자신만만해 하기도 한다. 하지만 자신의 감정만 중시하며 약속을 잘 지키지 않아 허풍쟁이라는 오명을 받기도 하여 이를 조심해야한다. 닭상을 가진 사람 중 의학,언론,발명 등에 천부적인 소질을 타고난사람이 많다. 일에 대한 의욕은 대단하지만 그 처음과 끝이 분명치 않아 한 가지 일을 꾸준히 밀고 나가는 내구력이 결핍되어 있다. 그래서 어렵고 힘든 일은 혼자 다 하고 쉬운 일은 남에게 넘기게 되곤 한다. 하지만 담백한 성격을 유지한다면 면밀하고 꼼꼼한 처세가 한 때 실의와 번민에 보낸 세월을 제대로 보상해 줄 것이다.</p></strong>
+            </span>
+        </div>
+            <span>  
+            <p id="font_ment" style="color: rgba(252, 123, 150, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 18%;">상대방을 사로잡는</p>
+            <p id="font_ment2" style="color: rgba(253, 89, 138, 1); font-size: 50px; margin-left: 25%;line-height: 10px; margin-top: 2%;">추천멘트</p>
+            <p id="font_ment3" style="color: rgba(255, 255, 255, 0.5); font-size: 50px; margin-left: 25%;line-height: 50px; margin-top: 4%;">'흰 천과 바람만 있다면<br>어디든지 갈 수 있어'</p>
+            <img src="../static/img_ment/rooster_ment.jpg" id="img_ment">
+        </span>
+    </body>
 </body>
 </html>
